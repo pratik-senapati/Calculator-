@@ -28,18 +28,21 @@ html
     border-radius: 30px;
     display:flex;
     flex-direction: column;
-    background-color: #c88fec;
-    overflow:hidden;
+    background-color:#242526;
+    
 }
 
 .display
 {
     height:50px;
-    background-color:#c88fec ;
-    color:#4c018d;
+    background-color:#242526 ;
+    color:white;
     font-size: 16px;
     border-radius: 16px;
-    margin:15px;
+    padding: 10px;
+    padding-bottom:5px;
+    display:flex;
+    align-items: center;
 }
 
 .buttons
@@ -52,17 +55,17 @@ html
     border-collapse:separate ;
     
     
-
-    
 }
 
 .b
 {
-    background-color: #c6a0e8;
-    border:0px;
+    background-color:  lightgrey;
+    border: 1px solid grey ;
     width:80px;
     height: 80px;
-    font-size: 16px;
+    font-size: 32px;
+    transition: background-color 1s;
+    transition-timing-function: ease;
 }
 
 .row
@@ -82,18 +85,24 @@ html
 
 #back
 {
-    background-color: #b767fd;
-    border:0px;
-    border-radius: 0px 0px 25px 0px;
-    border-color: gray;
+    background-color:  lightgrey;
+    border-width: 1px;
+    border-radius: 0px 0px 25px 2px;
+    border: 1px solid grey ;
+    font-size: 32px;
+    transition: background-color 1s;
+    transition-timing-function: ease;
 }
 
 #C
 {
-    background-color: #b767fd;
-    border: 0px;
-    border-radius: 0px 0px 0px 25px;
-    border-color: gray;
+    background-color:  lightgrey;
+    border: 1px solid grey ;
+    border-radius: 0px 0px 2px 25px;
+    border: 1px solid grey ;
+    font-size: 32px;
+    transition: background-color 1s;
+    transition-timing-function: ease;
     
 }
 
@@ -101,12 +110,45 @@ html
 
 #mult,#min,#plus,#div
 {
-    background-color:  #b581e3 ;
+    background-color: #ffa51e ;
+    color:white;
+    transition: background-color 1s;
+    transition-timing-function: ease;
+}
+
+#mult:hover,#min:hover,#plus:hover,#div:hover
+{
+    background-color: #dc8400;
 }
 
 
 
 #dec,#eq
 {
-    background-color: #c6a0e8 ;
+    background-color: lightgrey ;
+    transition: background-color 1s;
+    transition-timing-function: ease;
+}
+
+#display
+{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 32px;
+    
+}
+
+.b:hover, #dec:hover,#eq:hover
+{
+    background-color: darkgrey;
+
+}
+
+#C:hover
+{
+    background-color: darkgrey;
+}
+
+#back:hover
+{
+    background-color: darkgrey;
 }
