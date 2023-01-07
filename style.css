@@ -8,7 +8,7 @@ html
     box-sizing: border-box;
     background: linear-gradient(-45deg, #5f01b1, #8502f7, #a643fd, #c88fec);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 5s ease infinite;
     height: 100vh;
 }
 
@@ -19,6 +19,7 @@ html
     display:flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 
@@ -29,6 +30,9 @@ html
     display:flex;
     flex-direction: column;
     background-color:#242526;
+    overflow: hidden;
+    max-width: 300px;
+    padding-top: 10px;
     
 }
 
@@ -38,11 +42,20 @@ html
     background-color:#242526 ;
     color:white;
     font-size: 16px;
-    border-radius: 16px;
-    padding: 10px;
-    padding-bottom:5px;
+    /* border-radius: 16px; */
+    padding: 10px;px;
     display:flex;
     align-items: center;
+    width:100%;
+    overflow: vvv;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 28px;
+    overflow-x:auto;
+    scrollbar-width: thin;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    text-align: center;
+    
 }
 
 .buttons
@@ -130,12 +143,7 @@ html
     transition-timing-function: ease;
 }
 
-#display
-{
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: 32px;
-    
-}
+
 
 .b:hover, #dec:hover,#eq:hover
 {
