@@ -6,13 +6,37 @@ html
     margin:0;
     height:100%;
     box-sizing: border-box;
-    background: linear-gradient(-45deg, #5f01b1, #8502f7, #a643fd, #c88fec);
+    /* background: linear-gradient(-45deg, #5f01b1, #8502f7, #a643fd, #c88fec);
     background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    height: 100vh;
+    animation: gradient 15s ease infinite;
+    height: 100vh; */
 }
 
+html {
+    background: linear-gradient(27deg, #be05f1, #a817c6, #0f83c8, #17a4c6);
+    background-size: 800% 800%;
 
+    -webkit-animation: AnimationName 25s ease infinite;
+    -moz-animation: AnimationName 25s ease infinite;
+    animation: AnimationName 25s ease infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:82% 0%}
+    50%{background-position:19% 100%}
+    100%{background-position:82% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:82% 0%}
+    50%{background-position:19% 100%}
+    100%{background-position:82% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:82% 0%}
+    50%{background-position:19% 100%}
+    100%{background-position:82% 0%}
+}
 .main
 {
     
@@ -43,7 +67,7 @@ html
     color:white;
     font-size: 16px;
     /* border-radius: 16px; */
-    padding: 10px;px;
+    padding: 10px;
     display:flex;
     align-items: center;
     width:100%;
