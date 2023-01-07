@@ -1,0 +1,112 @@
+html
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    height:100%;
+    box-sizing: border-box;
+    background: linear-gradient(-45deg, #5f01b1, #8502f7, #a643fd, #c88fec);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+
+.main
+{
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.calculator
+{
+    border-collapse: separate;
+    border-radius: 30px;
+    display:flex;
+    flex-direction: column;
+    background-color: #c88fec;
+    overflow:hidden;
+}
+
+.display
+{
+    height:50px;
+    background-color:#c88fec ;
+    color:#4c018d;
+    font-size: 16px;
+    border-radius: 16px;
+    margin:15px;
+}
+
+.buttons
+{
+    width: 300px;
+    height: 400px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border-collapse:separate ;
+    
+    
+
+    
+}
+
+.b
+{
+    background-color: #c6a0e8;
+    border:0px;
+    width:80px;
+    height: 80px;
+    font-size: 16px;
+}
+
+.row
+{
+    display: flex;
+    justify-content:center;
+}
+
+
+.last
+{
+    height:80px;
+    width:160px;
+    border-radius: 0px 0px 25px 25px;
+    
+}
+
+#back
+{
+    background-color: #b767fd;
+    border:0px;
+    border-radius: 0px 0px 25px 0px;
+    border-color: gray;
+}
+
+#C
+{
+    background-color: #b767fd;
+    border: 0px;
+    border-radius: 0px 0px 0px 25px;
+    border-color: gray;
+    
+}
+
+
+
+#mult,#min,#plus,#div
+{
+    background-color:  #b581e3 ;
+}
+
+
+
+#dec,#eq
+{
+    background-color: #c6a0e8 ;
+}
