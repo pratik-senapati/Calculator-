@@ -44,8 +44,16 @@ html {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-direction: column;
 }
 
+p
+{
+    font-size: 2rem;
+    color: aliceblue;
+    font-weight: bold;
+    font-family:"Lucida Console", "Courier New", monospace;
+}
 
 .calculator
 {
@@ -60,7 +68,7 @@ html {
     
 }
 
-.display
+#display
 {
     height:50px;
     background-color:#242526 ;
