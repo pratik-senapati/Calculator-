@@ -1,14 +1,14 @@
-let div=document.querySelector("#div");
-let mult=document.querySelector("#mult");
-let min=document.querySelector("#min");
-let plus=document.querySelector("#plus");
+let min=0;
 let disp=document.querySelector("#display");
 let b=document.querySelectorAll(".b");
 let C=document.querySelector("#C");
 let back=document.querySelector("#back");
 let check=0;
+let sub=0;
 let dc=0;
 disp.textContent="0";
+let o;
+let mini=document.querySelector("#min");
 
 
 //function for operands 
@@ -19,17 +19,28 @@ function change(event)
             
             disp.textContent=event.textContent.trim();
             check=0;
+            dc=0;
+            
+            
         }
     
     else 
         {
             disp.textContent=`${disp.textContent}${event.textContent.trim()}`;
             check=0;
+            dc=0;
         }
 
 }
 
+function decimal(event)
+{
+    
+            disp.textContent=`${disp.textContent}${event.textContent.trim()}`;
+            check=0;
+        
 
+}
 //function for operators 
 function change_(event)
 {
@@ -40,15 +51,9 @@ function change_(event)
             {
                 
                 disp.textContent=`${disp.textContent}${event.textContent.trim()}`;
-                if(display.textContent.includes("."))
-                {
-                    dc=1;
-                }
-                else 
-                {
-                    dc=0;
-                }
+                dc=1;
                 check=1;
+                
             };
 
         }
@@ -59,16 +64,9 @@ function change_(event)
             if(check==0)
             {
                 disp.textContent=`${disp.textContent}${event.textContent.trim()}`;
-                if(display.textContent.includes("."))
-                {
-                    dc=1;
-                }
-                else 
-                {
-                    dc=0;
-                }
-
+                dc=1;
                 check=1;
+                
             }
 
         }
@@ -89,7 +87,7 @@ for(let i=0;i<b.length;i++)
             change_(b[i]);
         });
     }
-    else if( i!=14 && i!=12)
+    else if( i!=14 && i!=12 && i!=15)
     {
         b[i].addEventListener('click', function()
     {
@@ -140,17 +138,15 @@ function evaluate(expression)
                   
                 // There may be more than
                 // one digits in number
-                while (i < tokens.length &&
+                while (i < tokens.length
+                     &&
                         tokens[i] >= '0' &&
-                            tokens[i] <= '9' || tokens[i]=="." || tokens[i=="−"] )
+                            tokens[i] <= '9' || tokens[i]=="."  )
                 {
-                    if(tokens[i]=="−")
-                    {
-                        sbuf=sbuf+"-";
-                    }
+                   
                     sbuf = sbuf + tokens[i++];
                 }
-                values.push(Number(sbuf, 10));
+                    values.push(Number(sbuf, 10));
                 
                 // Right now the i points to
                 // the character next to the digit,
@@ -220,6 +216,7 @@ function evaluate(expression)
   
         // Top of 'values' contains
         // result, return it
+        
         return values.pop();
     }
   
@@ -274,8 +271,7 @@ function evaluate(expression)
         case '÷':
             if (b == 0)
             {
-                window.alert("Cannot divide by zero");
-                return;
+                return "ERR";
             }
             let z=(Number)(a/b);
             if(Number.isInteger(z))
@@ -298,25 +294,40 @@ function evaluate(expression)
             {
                 dc=0;
             }
+            else 
+            {
+                dc=1;
+            }
         }
     })
 
     //functionaity for backspace
     back.addEventListener("click", function()
     {
+        if(display.textContent[-1]=="+" || display.textContent[-1]=="×" || display.textContent[-1]=="÷" || display.textContent[-1]=="−")
+        {
+            display.textContent=display.textContent.slice(0,-1);
+            check=0;
+        }
         display.textContent=display.textContent.slice(0,-1);
     })
  
     //functionality for decimal point
     b[12].addEventListener("click", function()
     {
-        if(dc==0)
+        
+        if(dc==0 && check==1)
         {
-            change(b[12]);
+           decimal(b[12]);
             dc=1;
             check=0;
+        }
+        else if(dc==0 && check==0)
+        {
+            decimal(b[12]);
+            dc=1;
         }
 
     })
 
-    
+   
