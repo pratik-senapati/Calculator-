@@ -280,14 +280,6 @@ function evaluate(expression)
         if(check==0)
         {   
             let k=evaluate(display.textContent);
-            if(k.isNaN())
-            {
-                dc=0;
-                d=0;
-                op=0;
-
-                return;
-            }
             display.textContent=k;
             let j=display.textContent;
             if((j.includes(".",-1)))
