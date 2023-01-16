@@ -280,18 +280,33 @@ function evaluate(expression)
         if(check==0)
         {   
             let k=evaluate(display.textContent);
-            display.textContent=k;
-            let j=display.textContent;
-            if(!(u.includes(".")))
+            if(k.isNaN())
             {
                 dc=0;
+                d=0;
+                op=0;
+
+                return;
+            }
+            display.textContent=k;
+            let j=display.textContent;
+            if((j.includes(".",-1)))
+            {
+                dc=1;
+                d=1;
+                op=0;
+                return;
+                
+
             }
             else 
             {
-                dc=1;
+                dc=0;
+                d=0;
+                op=0;
+                return;
             }
-            d=0;
-            op=0;
+            
         }
     })
 
@@ -343,79 +358,79 @@ function evaluate(expression)
 
     })
 
-    window.addEventListener('keydown', (event) => {
-        const key = event.key;
-        if (parseInt(key))
-        {   if(key==0)
-            {
-                b[13].click();
-            }
-            else if(key==3)
-            {
-                b[10].click();
-            }
-            else if(key==3)
-            {
-                b[10].click();
-            }
-            else if(key==2)
-            {
-                b[9].click();
-            }
-            else if(key==1)
-            {
-                b[8].click();
-            }
-            else if(key==6)
-            {
-                b[6].click();
-            }
-            else if(key==5)
-            {
-                b[5].click();
-            }
-            else if(key==4)
-            {
-                b[4].click();
-            }
+    // window.addEventListener('keydown', (event) => {
+    //     const key = event.key;
+    //     if (parseInt(key))
+    //     {   if(key==0)
+    //         {
+    //             b[13].click();
+    //         }
+    //         else if(key==3)
+    //         {
+    //             b[10].click();
+    //         }
+    //         else if(key==3)
+    //         {
+    //             b[10].click();
+    //         }
+    //         else if(key==2)
+    //         {
+    //             b[9].click();
+    //         }
+    //         else if(key==1)
+    //         {
+    //             b[8].click();
+    //         }
+    //         else if(key==6)
+    //         {
+    //             b[6].click();
+    //         }
+    //         else if(key==5)
+    //         {
+    //             b[5].click();
+    //         }
+    //         else if(key==4)
+    //         {
+    //             b[4].click();
+    //         }
 
-            else if(key==9)
-            {
-                b[2].click();
-            }
-            else if(key==8)
-            {
-                b[1].click();
-            }
-            else if(key==7)
-            {
-                b[0].click();
-            }  
-        }
-        else if (key == '+') {
-            document.querySelector('#plus').click();
-        }
-        else if (key == '-') {
-            document.querySelector('#min').click();
-        }
-        else if (key == '*') {
-            document.querySelector('#mult').click();
-        }
-        else if (key == '/') {
-            document.querySelector('#div').click();
-        }
-        else if (key == 'Backspace') {
-            document.querySelector('#back').click();
-        }
-        else if (key == 'Enter') {
-            console.log(34343);
-            document.querySelector('#eq').click();
-        }
-        else if (key == 'c') {
-            document.querySelector('#C').click();
-        }
-        else if (key == '.') {
-            document.querySelector('#dec').click();
-        }
+    //         else if(key==9)
+    //         {
+    //             b[2].click();
+    //         }
+    //         else if(key==8)
+    //         {
+    //             b[1].click();
+    //         }
+    //         else if(key==7)
+    //         {
+    //             b[0].click();
+    //         }  
+    //     }
+    //     else if (key == '+') {
+    //         document.querySelector('#plus').click();
+    //     }
+    //     else if (key == '-') {
+    //         document.querySelector('#min').click();
+    //     }
+    //     else if (key == '*') {
+    //         document.querySelector('#mult').click();
+    //     }
+    //     else if (key == '/') {
+    //         document.querySelector('#div').click();
+    //     }
+    //     else if (key == 'Backspace') {
+    //         document.querySelector('#back').click();
+    //     }
+    //     else if (key == 'Enter') {
+    //         console.log(34343);
+    //         document.querySelector('#eq').click();
+    //     }
+    //     else if (key == 'c') {
+    //         document.querySelector('#C').click();
+    //     }
+    //     else if (key == '.') {
+    //         document.querySelector('#dec').click();
+    //     }
         
-    })
+    // })
