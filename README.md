@@ -1,3 +1,3 @@
 # Calculator-
 A simple calculator 
-Website link: https://crimsontypo.github.io/Calculator-/
+Website link: https://pratik-senapati.github.io/Calculator-/
